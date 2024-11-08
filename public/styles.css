@@ -1,0 +1,108 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #00bcd4; /* Mengubah warna font menjadi biru muda */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Mengubah arah flex menjadi kolom untuk responsivitas */
+    height: 100vh;
+    text-align: center;
+    animation: backgroundMove 10s linear infinite; /* Menambahkan animasi gerak latar belakang */
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+h1 {
+    font-size: 2.5em;
+    text-shadow: 0 0 20px rgba(0, 188, 212, 0.7); /* Efek glow biru muda */
+}
+h3 {
+    font-size: 1.5em;
+    margin-top: -40px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(0, 188, 212, 0.7); /* Efek glow biru muda */
+}
+
+form {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    width: 90%; /* Mengatur lebar form menjadi responsif */
+    max-width: 400px; /* Maksimal lebar form */
+    animation: formSlide 1s ease; /* Animasi slide untuk form */
+}
+
+@keyframes formSlide {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+label {
+    font-size: 1.2em;
+    margin: 10px 0;
+    display: block;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #00bcd4; /* Mengubah warna teks input dan select menjadi biru muda */
+    font-size: 1em;
+    transition: background 0.3s;
+}
+
+select:focus, input:focus {
+    background: rgba(255, 255, 255, 0.4);
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    background: linear-gradient(90deg, #00bcd4, #0097a7);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s; /* Menambahkan transisi untuk transform dan box-shadow */
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.5); /* Efek bayangan pada tombol */
+}
+
+button:hover {
+    background: linear-gradient(90deg, #0097a7, #007f8c);
+    transform: scale(1.05); /* Efek zoom saat hover */
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.7); /* Efek bayangan lebih dalam saat hover */
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #00bcd4; /* Mengubah warna hasil menjadi biru muda */
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.7); /* Efek glow biru muda pada hasil */
+    background: rgba(255, 255, 255, 0.1); /* Latar belakang hasil */
+    border-radius: 10px; /* Sudut melengkung */
+    padding: 15px; /* Padding untuk hasil */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Bayangan pada hasil */
+    max-width: 90%; /* Maksimal lebar hasil */
+    width: 400px; /* Lebar tetap untuk hasil */
+    margin-left: auto; /* Margin otomatis untuk pusat */
+    margin-right: auto; /* margin otomatis untuk pusat */
+    transition: background 0.3s; /* Transisi untuk latar belakang */
+}
+
+#result:hover {
+    background: rgba(255, 255, 255, 0.2); /* Mengubah latar belakang saat hover */
+}

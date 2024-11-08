@@ -1,0 +1,60 @@
+<!-- 
+    ================================================
+    🚨 PERHATIAN PENTING 🚨
+    ------------------------------------------------
+    Catatan Pengembangan:
+     wkwkw ngapain ngintip cuy gak ada apa-apa disini
+     yang ada disini hanya untuk menampilkan hasil program
+     owh iyah kenalan dulu kenalin cuy saya Gentra Ramadhan.
+     Umur 22, masih singel.
+     kalau mau sini chatan kita.
+     nomor whatsapp: 082262719754
+    ================================================
+    -->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fungsi Matematika</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Contoh program</h1><br/>
+    <h3>Dari pertanyaan syahrul efendi</h3><br/>
+    <form id="form">
+        <label for="function">Pilih fungsi:</label>
+        <select id="function" name="function">
+            <option value="factorial">Faktorial</option>
+            <option value="fibonacci">Fibonacci</option>
+            <option value="binary-search">Pencarian Biner</option>
+            <option value="inorder-traversal">Traversal Pohon</option>
+            <option value="permutation">Permutasi</option>
+            <option value="tower-of-hanoi">Tower of Hanoi</option>
+        </select>
+        <label for="input">Masukkan nilai:</label>
+        <input type="text" id="input" name="input" required>
+        <button type="submit">Kirim</button>
+        <div id="result"></div>
+    </form>
+    
+
+    <script>
+        document.getElementById('form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const functionName = document.getElementById('function').value;
+            const input = document.getElementById('input').value;
+            const response = await fetch(`/${functionName}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ number: input, array: input, elements: input, disks: input, target: input })
+            });
+            const result = await response.text();
+            document.getElementById('result').innerText = result;
+        });
+    </script>
+</body>
+</html>
